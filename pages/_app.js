@@ -8,19 +8,19 @@ import Loading from '../components/loading/loading';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)//true: เมื่อต้องต้องการให้ขึ้นการ loading
 
   useEffect( async () => {
-    const isLoggedIn = await magic.user.isLoggedIn();
-    if(isLoggedIn){
-      // route to /
-      setIsLoading(false);
-      router.push("/");
-    } else {
-      setIsLoading(false);
-      // route to /login
-      router.push("/login");
-    }
+    // const isLoggedIn = await magic.user.isLoggedIn();
+    // if(isLoggedIn){
+    //   // route to /
+    //   setIsLoading(false);
+    //   router.push("/");
+    // } else {
+    //   setIsLoading(false);
+    //   // route to /login
+    //   router.push("/login");
+    // }
   }, [])
 
 

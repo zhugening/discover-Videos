@@ -1,72 +1,3 @@
-// import Head from 'next/head'
-// import Image from 'next/image'
-// import styles from '../styles/Home.module.css'
-// import Banner from '../components/banner/banner';
-// import NavBar from '../components/nav/navbar';
-// import Card from '../components/card/card';
-// import SectionCards from "../components/card/section-cards"
-// import { getPopularVideos, getVideos } from "../lib/videos";
-
-// export async function getServerSideProps() {
-//   // move function getVideos to here for Server side rendering
-//   const disneyVideos = await getVideos("disney trailer");
-//   const productivityVideos = await getVideos("Productivity");
-//   const travelVideos = await getVideos("travel");
-//   const popularVideos = await getPopularVideos();
-
-//   // const disneyVideos = getVideos();
-
-//   // return { disneyVideos }
-
-// //   return { props : { 
-// //     disneyVideos, 
-// //     travelVideos, 
-// //     productivityVideos,
-// //     popularVideos },};
-// // }
-
-// export default function Home({ 
-//   disneyVideos, 
-//   travelVideos, 
-//   productivityVideos,
-//   popularVideos }) {
-
-//   return (
-//     <div className={styles.container}>
-//       <Head>
-//         <title>Netflix</title>
-//         <link rel="icon" href="/favicon.ico" />
-//       </Head>
-
-//       <div className={styles.main}>
-//       <NavBar username="Wutthipan@hotmail.com"/>
-//       <Banner title="Movie Name"
-//       subTitle = "a very cute dog"
-//       imgUrl= "/static/clifford.webp"/>
-
-
-//       <div className={styles.sectionWrapper}>
-//       <SectionCards title="Disney" 
-//       videos={disneyVideos} 
-//       size="large"/>
-      
-//       <SectionCards title="Travel" 
-//       videos={travelVideos} 
-//       size="small"/>
-
-//       <SectionCards title="Productivity" 
-//       videos={productivityVideos} 
-//       size="medium"/>
-
-//       <SectionCards title="Popular" videos={popularVideos} size="small"/>
-//       </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-
-// Option2
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
@@ -76,7 +7,7 @@ import Card from '../components/card/card';
 import SectionCards from "../components/card/section-cards"
 import { getPopularVideos, getVideos } from "../lib/videos";
 // import { magic } from "../lib/magic-client";
-
+// import { startFetchMyQuery } from '../lib/db/hasura';
 
 export async function getServerSideProps() {
   const disneyVideos = await getVideos("disney trailer");
@@ -88,6 +19,8 @@ export async function getServerSideProps() {
 }
 
 export default function Home({ disneyVideos , travelVideos , marvelVideos , popularVideos  }) {
+  // startFetchMyQuery();
+  
   // console.log({ magic })
   
   return (

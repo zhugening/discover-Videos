@@ -44,7 +44,7 @@ const Login = () => {
                 // log in a user by their email
                 try {
                     setIsLoading(true);
-                    // keep token when login 
+                    // keep token when login เพิ่ม Token หลังจาก Login
                     const didToken = await magic.auth.loginWithMagicLink({ email });
                     // console.log({didToken});
                     if (didToken) {
